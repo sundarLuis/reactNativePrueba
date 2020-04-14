@@ -166,7 +166,7 @@ export default class App extends Component<Props> {
     return (
       <ScrollView>
         <View style={styles.container}>
-          <Text style={styles.title}>
+          {/* <Text style={styles.title}>
             React Native Android Wifi Example App
           </Text>
           <View style={styles.instructionsContainer}>
@@ -263,8 +263,8 @@ export default class App extends Component<Props> {
               </TouchableHighlight>
               <Text style={styles.answer}>{this.state.currentSSID + ''}</Text>
             </View>
-          </View>
-          <View style={styles.instructionsContainer}>
+          </View> */}
+          {/* <View style={styles.instructionsContainer}>
             <Text style={styles.instructionsTitle}>Current BSSID</Text>
             <View style={styles.row}>
               <TouchableHighlight
@@ -274,7 +274,7 @@ export default class App extends Component<Props> {
               </TouchableHighlight>
               <Text style={styles.answer}>{this.state.currentBSSID + ''}</Text>
             </View>
-          </View>
+          </View> */}
           <View style={styles.instructionsContainer}>
             <Text style={styles.instructionsTitle}>
               Get all wifi networks in range
@@ -285,7 +285,7 @@ export default class App extends Component<Props> {
               <Text style={styles.buttonText}>Available WIFI Networks</Text>
             </TouchableHighlight>
           </View>
-          <View style={styles.instructionsContainer}>
+          {/* <View style={styles.instructionsContainer}>
             <Text style={styles.instructionsTitle}>Connection status</Text>
             <View style={styles.row}>
               <TouchableHighlight
@@ -317,8 +317,8 @@ export default class App extends Component<Props> {
               </Text>
             </View>
           </View>
-          <View style={styles.instructionsContainer}>
-            <Text style={styles.instructionsTitle}>Get current IP</Text>
+          <View style={styles.instructionsContainer}> */}
+            {/* <Text style={styles.instructionsTitle}>Get current IP</Text>
             <View style={styles.row}>
               <TouchableHighlight
                 style={styles.button}
@@ -329,7 +329,7 @@ export default class App extends Component<Props> {
                 {this.state.ip == null ? '' : this.state.ip}
               </Text>
             </View>
-          </View>
+          </View> */}
         </View>
         <Modal visible={this.state.modalVisible} onRequestClose={() => {}}>
           <TouchableHighlight
