@@ -16,7 +16,7 @@ import {
   PermissionsAndroid,
 } from 'react-native';
 
-import WifiManager from 'react-native-wifi-reborn';
+import wifi from 'react-native-android-wifi';
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -38,8 +38,8 @@ export default class App extends Component<Props> {
   }
 
   componentDidMount() {
-    // console.log(wifi);
-    // this.askForUserPermissions();
+    console.log(wifi);
+    this.askForUserPermissions();
   }
 
   async askForUserPermissions() {
@@ -64,40 +64,40 @@ export default class App extends Component<Props> {
   }
 
   serviceCheckOnPress() {
-    // wifi.isEnabled(isEnabled => {
-    //   this.setState({isWifiNetworkEnabled: isEnabled});
-    //   console.log(isEnabled);
-    // });
+    wifi.isEnabled(isEnabled => {
+      this.setState({isWifiNetworkEnabled: isEnabled});
+      console.log(isEnabled);
+    });
   }
 
   serviceSetEnableOnPress(enabled) {
-    // wifi.setEnabled(enabled);
+    wifi.setEnabled(enabled);
   }
 
   connectOnPress() {
-    // wifi.findAndConnect(this.state.ssid, this.state.pass, found => {
-    //   this.setState({ssidExist: found});
-    // });
+    wifi.findAndConnect(this.state.ssid, this.state.pass, found => {
+      this.setState({ssidExist: found});
+    });
   }
 
   disconnectOnPress() {
-    // wifi.disconnect();
+    wifi.disconnect();
   }
 
   getSSIDOnPress() {
-    // wifi.getSSID(ssid => {
-    //   this.setState({currentSSID: ssid});
-    // });
+    wifi.getSSID(ssid => {
+      this.setState({currentSSID: ssid});
+    });
   }
 
   getBSSIDOnPress() {
-    // wifi.getBSSID(bssid => {
-    //   this.setState({currentBSSID: bssid});
-    // });
+    wifi.getBSSID(bssid => {
+      this.setState({currentBSSID: bssid});
+    });
   }
 
   getWifiNetworksOnPress() {
-    WifiManager.reScanAndLoadWifiList(
+    wifi.loadWifiList(
       wifiStringList => {
         console.log(wifiStringList);
         var wifiArray = JSON.parse(wifiStringList);
@@ -111,36 +111,24 @@ export default class App extends Component<Props> {
         console.log(error);
       },
     );
-    // console.log('loadWifiList');
-    // WifiManager.reScanAndLoadWifiList(
-    //   wifiList => {
-    //     console.log('wifiList', wifiList);
-    //     let wifiArray = JSON.parse(wifiList);
-    //     console.log('wifiArray', wifiArray);
-    //     wifiArray.map((value, index) =>
-    //       console.log(`Wifi ${index + 1} - ${value.SSID}`),
-    //     );
-    //   },
-    //   error => console.log(error),
-    // );
   }
 
   connectionStatusOnPress() {
-    // wifi.connectionStatus(isConnected => {
-    //   this.setState({status: isConnected});
-    // });
+    wifi.connectionStatus(isConnected => {
+      this.setState({status: isConnected});
+    });
   }
 
   levelOnPress() {
-    // wifi.getCurrentSignalStrength(level => {
-    //   this.setState({level: level});
-    // });
+    wifi.getCurrentSignalStrength(level => {
+      this.setState({level: level});
+    });
   }
 
   ipOnPress() {
-    // wifi.getIP(ip => {
-    //   this.setState({ip: ip});
-    // });
+    wifi.getIP(ip => {
+      this.setState({ip: ip});
+    });
   }
 
   renderModal() {
